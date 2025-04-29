@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Calculadora NIF</title>
+    </head>
+    <body>
+        <h1>Calculadora de Letra del NIF</h1>
+        <div id="calculo-letra">
+            <label for="Numero de NIF"></label>
+            <input type="text" id="nif">
+            <button onclick="muestraLetraNif()">Calcular letra</button>
+        </div>
+        <script>
+            function calcularLetraNif(nif){
+                //Es lo mismo 
+                //let letra = ['T', 'R', 'W'......]
+                let letra = "TRWAGMYFPDXBNJZSQVHLCKE";
+                let posicion = nif%23;
+                return letra [posicion];
+            }
+
+            function muestraLetraNif(){
+                let nif = document.getElementById("nif").value;
+                let nifConLetra = nif + "-" + calculaLetraNif(nif);
+                alert(nifConLetra);
+            }
+        </script>
+    </body>
+</html>
